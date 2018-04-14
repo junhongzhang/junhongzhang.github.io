@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="数据分析,AHP," />
 
 
 
@@ -79,16 +79,23 @@
 
 
 
-<meta name="description" content="一个挖矿工的数据路">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="前言最近在做一个用户评分模型的项目，这个模型的目的就是用来判断用户的价值。希望通过各种指标来给用户综合打分，每个用户最后会得到一个分值，分值越高，说明用户的价值越高。这是一个总的目标，一个用户可以创造的价值由两部分决定：创造价值的能力和创造价值的意愿，前者是能不能的问题、后者是愿不愿意的问题。定了两个主线以后再次进行目标拆解，根据业务经验分别找到那些能够判断用户创造价值的能力和意愿的指标，然后给不">
+<meta name="keywords" content="数据分析,AHP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="实战-用户价值模型搭建">
+<meta property="og:url" content="http://yoursite.com/2018/04/14/实战-用户价值模型搭建/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="一个挖矿工的数据路">
+<meta property="og:description" content="前言最近在做一个用户评分模型的项目，这个模型的目的就是用来判断用户的价值。希望通过各种指标来给用户综合打分，每个用户最后会得到一个分值，分值越高，说明用户的价值越高。这是一个总的目标，一个用户可以创造的价值由两部分决定：创造价值的能力和创造价值的意愿，前者是能不能的问题、后者是愿不愿意的问题。定了两个主线以后再次进行目标拆解，根据业务经验分别找到那些能够判断用户创造价值的能力和意愿的指标，然后给不">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/7602070dly1fqcabg8gc3j20vk08e3ys.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/7602070dly1fqcagot3vqj20pm0h6405.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/7602070dly1fqcahe0mxvj20pp0gh761.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/7602070dly1fqc9z991fzj20vl09t3yw.jpg">
+<meta property="og:updated_time" content="2018-04-14T09:46:00.826Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="一个挖矿工的数据路">
+<meta name="twitter:title" content="实战-用户价值模型搭建">
+<meta name="twitter:description" content="前言最近在做一个用户评分模型的项目，这个模型的目的就是用来判断用户的价值。希望通过各种指标来给用户综合打分，每个用户最后会得到一个分值，分值越高，说明用户的价值越高。这是一个总的目标，一个用户可以创造的价值由两部分决定：创造价值的能力和创造价值的意愿，前者是能不能的问题、后者是愿不愿意的问题。定了两个主线以后再次进行目标拆解，根据业务经验分别找到那些能够判断用户创造价值的能力和意愿的指标，然后给不">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/7602070dly1fqcabg8gc3j20vk08e3ys.jpg">
 
 
 
@@ -118,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/14/实战-用户价值模型搭建/"/>
 
 
 
 
 
-  <title>Hexo</title>
+  <title>实战-用户价值模型搭建 | Hexo</title>
   
 
 
@@ -143,8 +150,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -277,9 +283,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -309,9 +315,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/14/实战-用户价值模型搭建/" itemprop="url">实战-用户价值模型搭建</a></h1>
+          <h1 class="post-title" itemprop="name headline">实战-用户价值模型搭建</h1>
         
 
         <div class="post-meta">
@@ -383,9 +387,7 @@
       
 
       
-        
-          
-            <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>最近在做一个用户评分模型的项目，这个模型的目的就是用来判断用户的价值。希望通过各种指标来给用户综合打分，每个用户最后会得到一个分值，分值越高，说明用户的价值越高。这是一个总的目标，一个用户可以创造的价值由两部分决定：创造价值的能力和创造价值的意愿，前者是能不能的问题、后者是愿不愿意的问题。定了两个主线以后再次进行目标拆解，根据业务经验分别找到那些能够判断用户创造价值的能力和意愿的指标，然后给不同的指标赋予不同的权重/分值，最后将各指标的权重/分值相加就是用户最后的总得分。</p>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>最近在做一个用户评分模型的项目，这个模型的目的就是用来判断用户的价值。希望通过各种指标来给用户综合打分，每个用户最后会得到一个分值，分值越高，说明用户的价值越高。这是一个总的目标，一个用户可以创造的价值由两部分决定：创造价值的能力和创造价值的意愿，前者是能不能的问题、后者是愿不愿意的问题。定了两个主线以后再次进行目标拆解，根据业务经验分别找到那些能够判断用户创造价值的能力和意愿的指标，然后给不同的指标赋予不同的权重/分值，最后将各指标的权重/分值相加就是用户最后的总得分。</p>
 <p>上面的这个过程有两个关键步骤，一个是<strong>选择合适的指标</strong>，另一个是<strong>给不同的指标赋予不同的权重</strong>，关于指标的选取，这个根据业务经验直接拍脑袋就可以，但是这个不同指标的权重问题，可能直接拍脑袋就不是太好了，当然了，也不是不可以。不过，做数据是一个严谨的工作（咳咳咳），还是希望能够找到一套理论来代替拍脑袋，所以就在网上找啊找，终于找到了今天的主角，就是AHP。</p>
 <h3 id="AHP介绍"><a href="#AHP介绍" class="headerlink" title="AHP介绍"></a>AHP介绍</h3><p>先来看看比较官方的解释：</p>
 <blockquote>
@@ -638,8 +640,6 @@
 </tbody>
 </table>
 
-          
-        
       
     </div>
     
@@ -654,142 +654,38 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/10/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="张俊红">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://github.com/junhongzhang/junhongzhang.github.io/blob/master/images/QQ%E5%9B%BE%E7%89%8720160502173917.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/10/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-10T00:31:48+08:00">
-                2018-04-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/数据分析/" rel="tag"># 数据分析</a>
           
-            
+            <a href="/tags/AHP/" rel="tag"># AHP</a>
           
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/10/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
       
     </footer>
   </div>
@@ -799,10 +695,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -810,6 +707,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -830,8 +731,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -911,6 +821,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AHP介绍"><span class="nav-number">2.</span> <span class="nav-text">AHP介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AHP流程"><span class="nav-number">3.</span> <span class="nav-text">AHP流程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#明确问题"><span class="nav-number">3.1.</span> <span class="nav-text">明确问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#问题及指标拆解"><span class="nav-number">3.2.</span> <span class="nav-text">问题及指标拆解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#构造判断矩阵"><span class="nav-number">3.3.</span> <span class="nav-text">构造判断矩阵</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#各指标权重计算步骤"><span class="nav-number">3.4.</span> <span class="nav-text">各指标权重计算步骤</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一致性检验的步骤如下"><span class="nav-number">3.5.</span> <span class="nav-text">一致性检验的步骤如下</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#层次单排序"><span class="nav-number">3.6.</span> <span class="nav-text">层次单排序</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AHP实例"><span class="nav-number">4.</span> <span class="nav-text">AHP实例</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#构造判断矩阵-1"><span class="nav-number">4.1.</span> <span class="nav-text">构造判断矩阵</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算各指标权重"><span class="nav-number">4.2.</span> <span class="nav-text">计算各指标权重</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一致性检验"><span class="nav-number">4.3.</span> <span class="nav-text">一致性检验</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#层次单排序-1"><span class="nav-number">4.4.</span> <span class="nav-text">层次单排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#层次总排序"><span class="nav-number">4.5.</span> <span class="nav-text">层次总排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#进行评分"><span class="nav-number">4.6.</span> <span class="nav-text">进行评分</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1051,6 +977,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
