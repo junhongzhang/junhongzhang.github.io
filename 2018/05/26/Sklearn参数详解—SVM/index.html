@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="机器学习,sklearn," />
+  <meta name="keywords" content="机器学习,sklearn,SVM," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="最近会开始一个新的系列，sklearn库中各模型的参数解释，本篇主要讲述最基础的LR模型。 模型参数详解逻辑回归：1sklearn.linear_model.LogisticRegression(penalty=&amp;apos;l2&amp;apos;, dual=False, tol=0.0001, C=1.0, fit_intercept=True, intercept_scaling=1, class_">
-<meta name="keywords" content="机器学习,sklearn">
+<meta name="description" content="本篇主要讲讲Sklearn中SVM，SVM主要有LinearSVC、NuSVC和SVC三种方法，我们将具体介绍这三种分类方法都有哪些参数值以及不同参数值含义。 在开始看本篇内容前你可以先看看：支持向量机原理详解 LinearSVC1class sklearn.svm.LinearSVC(penalty=&apos;l2&apos;, loss=&apos;squared_hinge&apos;, dual=True, tol=0.00">
+<meta name="keywords" content="机器学习,sklearn,SVM">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Sklearn参数详解——LR模型">
-<meta property="og:url" content="http://yoursite.com/2018/04/16/Sklearn参数详解—LR模型/index.html">
+<meta property="og:title" content="Sklearn参数详解——SVM">
+<meta property="og:url" content="http://yoursite.com/2018/05/26/Sklearn参数详解—SVM/index.html">
 <meta property="og:site_name" content="张俊红的博客">
-<meta property="og:description" content="最近会开始一个新的系列，sklearn库中各模型的参数解释，本篇主要讲述最基础的LR模型。 模型参数详解逻辑回归：1sklearn.linear_model.LogisticRegression(penalty=&amp;apos;l2&amp;apos;, dual=False, tol=0.0001, C=1.0, fit_intercept=True, intercept_scaling=1, class_">
+<meta property="og:description" content="本篇主要讲讲Sklearn中SVM，SVM主要有LinearSVC、NuSVC和SVC三种方法，我们将具体介绍这三种分类方法都有哪些参数值以及不同参数值含义。 在开始看本篇内容前你可以先看看：支持向量机原理详解 LinearSVC1class sklearn.svm.LinearSVC(penalty=&apos;l2&apos;, loss=&apos;squared_hinge&apos;, dual=True, tol=0.00">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-16T15:10:55.336Z">
+<meta property="og:updated_time" content="2018-05-26T06:53:21.613Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sklearn参数详解——LR模型">
-<meta name="twitter:description" content="最近会开始一个新的系列，sklearn库中各模型的参数解释，本篇主要讲述最基础的LR模型。 模型参数详解逻辑回归：1sklearn.linear_model.LogisticRegression(penalty=&amp;apos;l2&amp;apos;, dual=False, tol=0.0001, C=1.0, fit_intercept=True, intercept_scaling=1, class_">
+<meta name="twitter:title" content="Sklearn参数详解——SVM">
+<meta name="twitter:description" content="本篇主要讲讲Sklearn中SVM，SVM主要有LinearSVC、NuSVC和SVC三种方法，我们将具体介绍这三种分类方法都有哪些参数值以及不同参数值含义。 在开始看本篇内容前你可以先看看：支持向量机原理详解 LinearSVC1class sklearn.svm.LinearSVC(penalty=&apos;l2&apos;, loss=&apos;squared_hinge&apos;, dual=True, tol=0.00">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/04/16/Sklearn参数详解—LR模型/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/26/Sklearn参数详解—SVM/"/>
 
 
 
 
 
-  <title>Sklearn参数详解——LR模型 | 张俊红的博客</title>
+  <title>Sklearn参数详解——SVM | 张俊红的博客</title>
   
 
 
@@ -293,7 +293,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/16/Sklearn参数详解—LR模型/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/26/Sklearn参数详解—SVM/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张俊红">
@@ -310,7 +310,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Sklearn参数详解——LR模型</h1>
+          <h1 class="post-title" itemprop="name headline">Sklearn参数详解——SVM</h1>
         
 
         <div class="post-meta">
@@ -322,8 +322,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-16T23:12:00+08:00">
-                2018-04-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-26T14:53:44+08:00">
+                2018-05-26
               </time>
             
 
@@ -382,56 +382,23 @@
       
 
       
-        <p>最近会开始一个新的系列，sklearn库中各模型的参数解释，本篇主要讲述最基础的LR模型。</p>
-<h3 id="模型参数详解"><a href="#模型参数详解" class="headerlink" title="模型参数详解"></a>模型参数详解</h3><p>逻辑回归：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sklearn.linear_model.LogisticRegression(penalty=&apos;l2&apos;, dual=False, tol=0.0001, C=1.0, fit_intercept=True, intercept_scaling=1, class_weight=None, random_state=None, solver=&apos;liblinear&apos;, max_iter=100, multi_class=&apos;ovr&apos;, verbose=0, warm_start=False, n_jobs=1)</span><br></pre></td></tr></table></figure></p>
-<p><code>penalty</code>:正则化选择参数，参数可选值为l1和l2，分别对应l1正则化和l2正则化，默认是l2正则化。</p>
-<p>调整该参数的目的主要是为了防止过拟合，一般penalty选择l2正则化就够啦，但是如果选择l2正则化发现依然过拟合，即预测效果还是很差的时候，就可以考虑l1正则化。如果模型的特征非常多，我们希望做一些特征选择（即把一些不重要的特征过滤掉），这个时候也可以考虑用l1正则化。</p>
-<p>penalty参数的选择会影响我们损失函数优化算法的选择，即参数<code>solver</code>的选择，如果是l2正则化，可选的优化算法 {‘newton-cg’, ‘lbfgs’, ‘liblinear’, ‘sag’}都可以选择。但是如果penalty是L1正则化的话，就只能选择‘liblinear’了。这是因为L1正则化的损失函数不是连续可导的，而{‘newton-cg’, ‘lbfgs’,‘sag’}这三种优化算法时都需要损失函数的一阶或者二阶连续导数。而‘liblinear’并没有这个依赖。这几个优化方法在solver参数环节进行讲述。</p>
-<p><code>dual</code>:用来指明是否将原问题改成他的对偶问题，对偶问题可以理解成相反问题，比如原问题是求解最大值的线性规划，那么他的对偶问题就是转化为求解最小值的线性规划，适用于样本较小的数据集，因样本小时，计算复杂度较低。</p>
-<p><code>tol</code>:残差收敛条件，默认是0.0001，也就是只需要收敛的时候两步只差＜0.0001就停止，可以设置更大或更小。(逻辑回归模型的损失函数是残差平方和)</p>
-<p><code>C</code>:正则化系数，正则化强度的导数，必须是一个正数，值越小，正则化强度越大，即防止过拟合的程度更大。</p>
-<p><code>fit_intercept</code>:是否将截距/方差加入到决策模型中，默认为True。</p>
-<p><code>class_weight</code>:class_weight是很重要的一个参数，是用来调节正负样本比例的，默认是值为None，也就是正负样本的权重是一样的，你可以以dict的形式给模型传入任意你认为合适的权重比，也可以直接指定一个值“balanced”，模型会根据正负样本的绝对数量比来设定模型最后结果的权重比。</p>
-<p>比如，有一数据集的正负样本绝对数量比为4:6,如果你给参数class_weight赋予balanced值，那么最后模型结果中，正负样本的权重比就会变成6:4。</p>
-<p><code>random_state</code>:随机种子的设置，默认是None,如果设置了随机种子，那么每次使用的训练集和测试集都是一样的，这样不管你运行多少次，最后的准确率都是一样的；如果没有设置，那么每次都是不同的训练集和测试集，最后得出的准确率也是不一样的。</p>
-<p><code>solver</code>:用来指明损失函数的优化方法，默认是‘liblinear’方法，sklearn自带了如下几种：</p>
-<table>
-<thead>
-<tr>
-<th>参数值</th>
-<th>优化方法</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>liblinear</td>
-<td>使用了坐标轴下降法来迭代优化损失函数</td>
-</tr>
-<tr>
-<td>lbfgs</td>
-<td>拟牛顿法的一种，利用损失函数二阶导数矩阵即海森矩阵来迭代优化损失函数</td>
-</tr>
-<tr>
-<td>newton-cg</td>
-<td>也是牛顿法法的一种，利用损失函数二阶导数矩阵即海森矩阵来迭代优化损失函数</td>
-</tr>
-<tr>
-<td>sag</td>
-<td>即随机平均梯度下降，是梯度下降法的变种，是一种线性收敛算法，和普通梯度下降法的区别是每次迭代仅仅用一部分的样本来计算梯度，适合于样本数据多的时候</td>
-</tr>
-</tbody>
-</table>
-<p>newton-cg, lbfgs和sag这三种优化算法时都需要损失函数的一阶或者二阶连续导数，因此不能用于没有连续导数的L1正则化，只能用于L2正则化。而liblinear对L1正则化和L2正则化都适用。同时，因sag每次仅仅使用了部分样本进行梯度迭代，所以当数据量较少时不宜选用，而当数据量很大时，为了速度，sag是第一选择。</p>
-<p><code>max_iter</code>:算法收敛的最大迭代次数，即求取损失函数最小值的迭代次数，默认是100，<br><code>multi_class</code>:分类方法参数选择，‘ovr’和‘multinomial’两个值可以选择，默认值为‘ovr’，如果分类问题是二分类问题，那么这两个参数的效果是一样的，主要体现在多分类问题上。</p>
-<p>对于多分类问题，”ovr”分类方法是：针对每一类别进行判断时，都会把这个分类问题简化为是/非两类问题；而‘multinomial’是从众多类别中选出两个类别，对这两个类别进行判断，待判断完成后，再从剩下的类别中再选出两类进行判断，直至最后判断完成。</p>
-<p><code>verbose</code>:英文意思是”冗余“，就是会输出一些模型运算过程中的东西（任务进程），默认是False，也就是不需要输出一些不重要的计算过程。</p>
-<p><code>warm_start</code>:是否使用上次的模型结果作为初始化，默认是False，表示不使用。</p>
-<p><code>n_jobs</code>:并行运算数量(核的数量)，默认为1，如果设置为-1，则表示将电脑的cpu全部用上。</p>
-<h3 id="模型对象"><a href="#模型对象" class="headerlink" title="模型对象"></a>模型对象</h3><blockquote>
-<p><code>coef_</code>:返回各特征的系数,绝对值大小可以理解成特征重要性<br><code>intercept_</code>:返回模型的截距<br><code>n_iter_</code>:模型迭代次数</p>
-</blockquote>
-<h3 id="模型方法"><a href="#模型方法" class="headerlink" title="模型方法"></a>模型方法</h3><blockquote>
-<p><code>decision_function(X)</code>:返回决策函数值（比如svm中的决策距离）<br><code>predict_proba(X)</code>:返回每个类别的概率值（有几类就返回几列值）<br><code>predict_log_proba(X)</code>:返回概率值的log值（即将概率取对数）<br><code>predict(X)</code>：返回预测结果值（0/1）<br><code>score(X, y=None)</code>:返回函数<br><code>get_params(deep=True)</code>:返回估计器的参数<br><code>set_params(**params)</code>:为估计器设置参数</p>
+        <hr>
+<p>本篇主要讲讲Sklearn中SVM，SVM主要有LinearSVC、NuSVC和SVC三种方法，我们将具体介绍这三种分类方法都有哪些参数值以及不同参数值含义。</p>
+<p>在开始看本篇内容前你可以先看看：<a href="https://mp.weixin.qq.com/s?__biz=MzI2MjE3OTA1MA==&amp;mid=2247484660&amp;idx=1&amp;sn=b91c5a608c92aebefe34ca243ab92d98&amp;chksm=ea4e5571dd39dc67586253a36eabffc3d439a0560007d0ecba9ed46d501d48de4925cc937da7&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">支持向量机原理详解</a></p>
+<h3 id="LinearSVC"><a href="#LinearSVC" class="headerlink" title="LinearSVC"></a>LinearSVC</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">sklearn</span>.<span class="title">svm</span>.<span class="title">LinearSVC</span><span class="params">(penalty=<span class="string">'l2'</span>, loss=<span class="string">'squared_hinge'</span>, dual=True, tol=<span class="number">0.0001</span>, C=<span class="number">1.0</span>, multi_class=<span class="string">'ovr'</span>, fit_intercept=True, intercept_scaling=<span class="number">1</span>, class_weight=None, verbose=<span class="number">0</span>, random_state=None, max_iter=<span class="number">1000</span>)</span></span></span><br></pre></td></tr></table></figure>
+<p><code>penalty:</code>正则化参数，L1和L2两种参数可选，仅LinearSVC有。<br><code>loss:</code>损失函数，有‘hinge’和‘squared_hinge’两种可选，前者又称L1损失，后者称为L2损失，默认是是’squared_hinge’，其中hinge是SVM的标准损失，squared_hinge是hinge的平方。<br><code>dual:</code>是否转化为对偶问题求解，默认是True。<br><code>tol:</code>残差收敛条件，默认是0.0001，与LR中的一致。<br><code>C:</code>惩罚系数，用来控制损失函数的惩罚系数，类似于LR中的正则化系数。<br><code>multi_class:</code>负责多分类问题中分类策略制定，有‘ovr’和‘crammer_singer’ 两种参数值可选，默认值是’ovr’，’ovr’的分类原则是将待分类中的某一类当作正类，其他全部归为负类，通过这样求取得到每个类别作为正类时的正确率，取正确率最高的那个类别为正类；‘crammer_singer’ 是直接针对目标函数设置多个参数值，最后进行优化，得到不同类别的参数值大小。<br><code>fit_intercept:</code>是否计算截距，与LR模型中的意思一致。<br><code>class_weight:</code>与其他模型中参数含义一样，也是用来处理不平衡样本数据的，可以直接以字典的形式指定不同类别的权重，也可以使用balanced参数值。<br><code>verbose:</code>是否冗余，默认是False.<br><code>random_state:</code>随机种子的大小。<br><code>max_iter:</code>最大迭代次数，默认是1000。</p>
+<h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><p><code>coef_</code>:各特征的系数（重要性）。<br><code>intercept_</code>:截距的大小（常数值）。</p>
+<h3 id="NuSVC"><a href="#NuSVC" class="headerlink" title="NuSVC"></a>NuSVC</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">sklearn</span>.<span class="title">svm</span>.<span class="title">NuSVC</span><span class="params">(nu=<span class="number">0.5</span>, kernel=<span class="string">'rbf'</span>, degree=<span class="number">3</span>, gamma=<span class="string">'auto'</span>, coef0=<span class="number">0.0</span>, shrinking=True, probability=False, tol=<span class="number">0.001</span>, cache_size=<span class="number">200</span>, class_weight=None, verbose=False, max_iter=<span class="number">-1</span>, decision_function_shape=<span class="string">'ovr'</span>, random_state=None)</span>)</span></span><br></pre></td></tr></table></figure>
+<p><code>nu</code>:训练误差部分的上限和支持向量部分的下限，取值在（0，1）之间，默认是0.5<br><code>kernel</code>:核函数，核函数是用来将非线性问题转化为线性问题的一种方法，默认是“rbf”核函数，常用的核函数有以下几种：<br>|表示|解释|<br>|–|–|<br>|linear|线性核函数|<br>|poly|多项式核函数|<br>|rbf|高斯核函数|<br>|sigmod|sigmod核函数|<br>|precomputed|自定义核函数|</p>
+<p>关于不同核函数之间的区别，可以参考这篇文章：<a href="https://blog.csdn.net/batuwuhanpei/article/details/52354822" target="_blank" rel="noopener">https://blog.csdn.net/batuwuhanpei/article/details/52354822</a></p>
+<p><code>degree</code>:当核函数是多项式核函数的时候，用来控制函数的最高次数。（多项式核函数是将低维的输入空间映射到高维的特征空间）<br><code>gamma</code>:核函数系数，默认是“auto”，即特征维度的倒数。<br><code>coef0</code>:核函数常数值(y=kx+b中的b值)，只有‘poly’和‘sigmoid’核函数有，默认值是0。<br><code>max_iter</code>:最大迭代次数，默认值是-1，即没有限制。<br><code>probability</code>:是否使用概率估计，默认是False。<br><code>decision_function_shape</code>:与’multi_class’参数含义类似。<br><code>cache_size</code>:缓冲大小，用来限制计算量大小，默认是200M。</p>
+<h2 id="对象-1"><a href="#对象-1" class="headerlink" title="对象"></a>对象</h2><p><code>support_</code>:以数组的形式返回支持向量的索引。<br><code>support_vectors_</code>:返回支持向量。<br><code>n_support_</code>:每个类别支持向量的个数。<br><code>dual_coef_</code>:支持向量系数。<br><code>coef_</code>:每个特征系数（重要性），只有核函数是LinearSVC的时候可用。<br><code>intercept_</code>:截距值（常数值）。</p>
+<h3 id="SVC"><a href="#SVC" class="headerlink" title="SVC"></a>SVC</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">sklearn</span>.<span class="title">svm</span>.<span class="title">SVC</span><span class="params">(C=<span class="number">1.0</span>, kernel=<span class="string">'rbf'</span>, degree=<span class="number">3</span>, gamma=<span class="string">'auto'</span>, coef0=<span class="number">0.0</span>, shrinking=True, probability=False, tol=<span class="number">0.001</span>, cache_size=<span class="number">200</span>, class_weight=None, verbose=False, max_iter=<span class="number">-1</span>, decision_function_shape=<span class="string">'ovr'</span>, random_state=None)</span></span></span><br></pre></td></tr></table></figure>
+<p><code>C:</code>惩罚系数。<br>SVC和NuSVC方法基本一致，唯一区别就是损失函数的度量方式不同（NuSVC中的nu参数和SVC中的C参数）。</p>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p>三种分类方法的方法基本一致，所以就一起来说啦。</p>
+<p><code>decision_function(X)</code>:获取数据集X到分离超平面的距离。<br><code>fit(X, y)</code>:在数据集(X,y)上使用SVM模型。<br><code>get_params([deep])</code>:获取模型的参数。<br><code>predict(X)</code>:预测数据值X的标签。<br><code>score(X,y)</code>:返回给定测试集和对应标签的平均准确率。</p>
+<blockquote>
+<p>你还可以看：<br><a href="https://mp.weixin.qq.com/s?__biz=MzI2MjE3OTA1MA==&amp;mid=2247484893&amp;idx=1&amp;sn=fe366a82459cd62fde97ada21ae9e5ad&amp;chksm=ea4e5458dd39dd4e24fdf87d1f61c6f7f80a7a841a34612c241505d3d927d8ae61d02f62b70f&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">Sklearn参数详解—LR模型</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzI2MjE3OTA1MA==&amp;mid=2247484903&amp;idx=1&amp;sn=e3c3af7b600854c65df01cf93d8a21f4&amp;chksm=ea4e5462dd39dd74a724c213d725f888364a6acd27bebb116ad90137545f03baa939a1b36daa&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">Sklearn参数详解—决策树模型</a></p>
 </blockquote>
 
       
@@ -491,6 +458,8 @@
           
             <a href="/tags/sklearn/" rel="tag"># sklearn</a>
           
+            <a href="/tags/SVM/" rel="tag"># SVM</a>
+          
         </div>
       
 
@@ -502,8 +471,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/14/实战-用户价值模型搭建/" rel="next" title="实战-用户价值模型搭建">
-                <i class="fa fa-chevron-left"></i> 实战-用户价值模型搭建
+              <a href="/2018/05/12/Sklearn参数详解--决策树/" rel="next" title="Sklearn参数详解——决策树">
+                <i class="fa fa-chevron-left"></i> Sklearn参数详解——决策树
               </a>
             
           </div>
@@ -511,10 +480,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/28/Python面向对象编程/" rel="prev" title="Python面向对象编程">
-                Python面向对象编程 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -660,7 +625,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#模型参数详解"><span class="nav-number">1.</span> <span class="nav-text">模型参数详解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型对象"><span class="nav-number">2.</span> <span class="nav-text">模型对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型方法"><span class="nav-number">3.</span> <span class="nav-text">模型方法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#LinearSVC"><span class="nav-number">1.</span> <span class="nav-text">LinearSVC</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象"><span class="nav-number"></span> <span class="nav-text">对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#NuSVC"><span class="nav-number">1.</span> <span class="nav-text">NuSVC</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象-1"><span class="nav-number"></span> <span class="nav-text">对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SVC"><span class="nav-number">1.</span> <span class="nav-text">SVC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法"><span class="nav-number">2.</span> <span class="nav-text">方法</span></a></li></ol></div>
             
 
           </div>
